@@ -43,6 +43,49 @@
                 return `You Lose :( ${computerSelection} beats ${playerSelection}`;
             }
         }
+
+        function game() {
+            let playerScore = 0;
+            let computerScore = 0;
+
+            for (let i = 0; i < 5; i++) {
+                let playerSelection = prompt("Please Enter Your Selection: ");
+                let computerSelection = computerPlay();
+
+                let result = playRound(playerSelection, computerSelection);
+
+                if (result.substr(4, 4).toUpperCase() === "WIN!") {
+                    playerScore++;
+                }
+
+                else if (result.substr(4, 4).toUpperCase() === "LOSE") {
+                    computerScore++;
+                }
+
+                else {
+                    playerScore += 0.5;
+                    computerScore += 0.5;
+                }
+
+                console.log(result + "\n" + "Player Score: " + playerScore + "\tComputer Score: " + computerScore + "\n");
+            }
+
+            console.log("\n");
+
+            if (playerScore === computerScore) {
+                console.log("Draw! You both have equal points");
+            }
+
+            else if (playerScore > computerScore) {
+                console.log("You won the game! Congratulations");
+            }
+
+            else {
+                console.log("You lost the game :( I'm sorry");
+            }
+        }
+
+        game();
     </script>
 </body>
 </html>
