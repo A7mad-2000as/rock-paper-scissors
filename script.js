@@ -58,9 +58,9 @@ function selectButton(e) {
 
     const results = document.querySelector(".results");
 
-    
+
     const roundResult = document.createElement("p");
-    roundResult.textContent = result + "\n" + "Player Score: " + playerScore + "\tComputer Score: " + computerScore + "\n";
+    roundResult.innerHTML = result + "<br><br>" + "Player Score: " + playerScore + "<span style=\"display: inline-block; width: 250px;\"></span>Computer Score: " + computerScore + "<br>";
     results.appendChild(roundResult);
 
     if (playerScore >= 5 || computerScore >= 5) {
