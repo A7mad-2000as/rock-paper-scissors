@@ -5,86 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <script>
-        function computerPlay() {
-            let randomChoice = Math.floor(Math.random() * 3);
-            
-            if (randomChoice === 0) {
-                return "ROCK";
-            }
+    <h1>Rock, Paper, Scissors!</h1>
+    <p>Choose wisely, first to five wins!</p>
 
-            else if (randomChoice === 1) {
-                return "PAPER";
-            }
+    <div class="options">
+        <button class="rock">Rock</button>
+        <button class="paper">Paper</button>
+        <button class="scissors">Scissors</button>
+    </div>
 
-            else {
-                return "SCISSORS";
-            }
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            playerSelection = playerSelection.toUpperCase();
-            
-            if (playerSelection === computerSelection) {
-                return `Draw! Both chose ${playerSelection}`;
-            }
-
-            else if (playerSelection === "ROCK" && computerSelection === "SCISSORS" ||
-                     playerSelection === "PAPER" && computerSelection === "ROCK" ||
-                     playerSelection === "SCISSORS" && computerSelection === "PAPER"
-                    ) {
-                        return `You Win! ${playerSelection} beats ${computerSelection}`;
-                    }
-
-            else {
-                return `You Lose :( ${computerSelection} beats ${playerSelection}`;
-            }
-        }
-
-        function game() {
-            let playerScore = 0;
-            let computerScore = 0;
-
-            for (let i = 0; i < 5; i++) {
-                let playerSelection = prompt("Please Enter Your Selection: ");
-                let computerSelection = computerPlay();
-
-                let result = playRound(playerSelection, computerSelection);
-
-                if (result.substr(4, 4).toUpperCase() === "WIN!") {
-                    playerScore++;
-                }
-
-                else if (result.substr(4, 4).toUpperCase() === "LOSE") {
-                    computerScore++;
-                }
-
-                else {
-                    playerScore += 0.5;
-                    computerScore += 0.5;
-                }
-
-                console.log(result + "\n" + "Player Score: " + playerScore + "\tComputer Score: " + computerScore + "\n");
-            }
-
-            console.log("\n");
-
-            if (playerScore === computerScore) {
-                console.log("Draw! You both have equal points");
-            }
-
-            else if (playerScore > computerScore) {
-                console.log("You won the game! Congratulations");
-            }
-
-            else {
-                console.log("You lost the game :( I'm sorry");
-            }
-        }
-
-        game();
-    </script>
+    <div class="results"></div>
 </body>
 </html>

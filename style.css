@@ -1,0 +1,45 @@
+body {
+    background-color: orchid;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.options {
+/*     height: 400px;
+ */    display: flex;
+    justify-content: space-between;
+/*     align-items: center;
+ */
+}
+
+button {
+    background-color: lightseagreen;
+    border-color: lightseagreen;
+    border-style: solid;
+    padding: 15px;
+    width: 150px;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.07;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+/* button.pressed {
+    transform: scale(0.5);
+} */
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+body > p {
+    font-size: 22px;
+    margin-bottom: 80px;
+}
